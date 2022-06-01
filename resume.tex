@@ -29,6 +29,13 @@
 
 \usepackage{TLCresume}
 \usepackage{fontawesome}
+\usepackage{setspace}
+\usepackage{hyperref}
+
+\usepackage{tikz}
+\newcommand{\cvtag}[1]{%
+  \tikz[baseline]\node[anchor=base,draw=black!30,rounded corners,inner xsep=.75ex,inner ysep =0.35ex,text height=1.5ex,text depth=.25ex]{#1};
+}
 
 %====================
 % CONTACT INFORMATION
@@ -41,9 +48,19 @@
 \def\github{renatocjn} % github username
 \def\role{Network Researcher \& Junior Developer} % JOB TITLE
 
-\input{_header}
+
+
 \begin{document}
-\input{sections/objective}
+
+\input{_header}
+
+% \begin{minipage}{.74\textwidth}
+% \input{sections/objective}
+% \end{minipage}
+
+% \begin{minipage}{.24\textwidth}
+%   \includegraphics[width=1in]{photo}
+% \end{minipage}
 
 \section{Skills}
 \input{sections/skills}
