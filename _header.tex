@@ -8,24 +8,29 @@
 % \fancypagestyle{fancy}{%
 % \fancyhf{}
 
-\begin{minipage}{\dimexpr(\textwidth-1.2in)}
-  \begin{minipage}{.35\linewidth}
-    \faPhone \enspace \phone \\
-    \faEnvelope \enspace \href{mailto:\email}{\email} \\
-    \faLanguage \enspace English, Portuguese, French \\
-    % \faMapMarker \enspace \city \\
-    \faGithub \enspace \href{https://github.com/\github}{github.com/\github} \\
-    \faLinkedin \enspace \href{https://www.linkedin.com/in/\LinkedIn}{linkedin.com/in/\LinkedIn}
-    \smallskip
-  \end{minipage}
-  \begin{minipage}{.65\linewidth}
-    \centering
-    {\Huge \skills \name} \\
-    {\color{highlight} \Large{\role}} \vspace{2em} %
-  \end{minipage}
-  {\color{highlight}\hrulefill}
-  \input{sections/objective}
-\end{minipage}
 \begin{minipage}{1.1in}
   \centering \includegraphics[width=1in]{photo}
+\end{minipage}
+\begin{minipage}{\dimexpr(\textwidth-1.2in)}
+  \begin{minipage}{.7\linewidth}
+    \centering
+    {\Huge \skills \name} \\
+    {\color{highlight} \Large{\role}} \vspace{2em}
+  \end{minipage}
+  \begin{minipage}{.3\linewidth}
+    \raggedleft
+    \begin{small}
+      % \faGlobeAmericas \enspace \nationality \\
+      % \faBirthdayCake \enspace \birthday \\
+      \faPhone \enspace \phone \\
+      \faEnvelope \enspace \href{mailto:\email}{\email} \\
+      \faLanguage \enspace English, Portuguese, French \\
+      % \faMapMarker \enspace \city \\
+      \faGithub \enspace \href{https://github.com/\github}{github.com/\github} \\
+      \faLinkedin \enspace \href{https://www.linkedin.com/in/\LinkedIn}{linkedin.com/in/\LinkedIn}
+    \end{small}
+  \end{minipage}
+  \enskip
+  {\color{highlight}\hrulefill}
+  \input{sections/objective}
 \end{minipage}
