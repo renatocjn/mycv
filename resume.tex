@@ -26,7 +26,7 @@
 %
 %====================
 
-
+\usepackage[english,french]{babel}
 \usepackage{TLCresume}
 \usepackage{fontawesome5}
 \usepackage{setspace}
@@ -37,19 +37,46 @@
   \tikz[baseline]\node[anchor=base,draw=black!30,rounded corners,inner xsep=.75ex,inner ysep =0.35ex,text height=1.5ex,text depth=.25ex]{#1};
 }
 
+
+%=====================
+% INTERNATIONALIZATION
+%=====================
+
+\newif\ifen
+\newif\iffr
+
+\newcommand{\en}[1]{\ifen#1\fi}
+\newcommand{\fr}[1]{\iffr#1\fi}
+
+\ifdefined\english
+  \entrue
+\else \ifdefined\french
+  \frtrue
+\else % Default (or debug) language
+  \entrue   % English
+  % \frtrue   % French
+\fi
+\fi
+
 %====================
-% CONTACT INFORMATION
+% INFORMATION
 %====================
 \def\name{Renato C. Juaçaba Neto} % Name Here
 \def\phone{+33 (0)6 13 18 16 96}
-\def\city{Strasbourg, France}
 \def\email{renatocjn@gmail.com}
 \def\LinkedIn{renatocjn} % linkedin.com/in/______
 \def\github{renatocjn} % github username
-\def\role{Network Researcher \& Junior Developer} % JOB TITLE
+\def\role{% JOB TITLE
+\en{Network Researcher \& Junior Developer}
+\fr{Chercheur \& Développeur junior}
+}
 \def\birthday{25 Jun 1992}
-\def\nationality{Brazilian}
+\def\nationality{\en{Brazilian}\fr{Brésilien}}
 \def\address{Strasbourg, FR}
+\def\languages{% Languages spoken
+\en{English, Portuguese, French}
+\fr{Anglais, portugais, français}
+}
 
 
 \begin{document}
@@ -64,19 +91,24 @@
 %   \includegraphics[width=1in]{photo}
 % \end{minipage}
 
-\section{Skills}
+\en{\section{Skills}}
+\fr{\section{Compétences}}
 \input{sections/skills}
 
-\section{Technical Experience}
+\en{\section{Experience}}
+\fr{\section{Expérience}}
 \input{sections/experience}
 
-\section{Education}
+\en{\section{Education}}
+\fr{\section{Éducation}}
 \input{sections/education}
 
-\section{Main Publications}
+\en{\section{Main Publications}}
+\fr{\section{Principales publications}}
 \input{sections/publications}
 
-\section{Other Activities}
+\en{\section{Other Activities}}
+\fr{\section{Autres activités}}
 \input{sections/activities}
 
 
