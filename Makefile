@@ -1,4 +1,3 @@
-
 .PHONY: all
 all: english french clean
 
