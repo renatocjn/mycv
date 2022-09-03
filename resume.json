@@ -153,7 +153,7 @@
       "name": "Performance Analysis of Resource Unit Configurations for M2M Traffic in the Narrowband-IoT System",
       "publisher": "XXXV Simpósio Brasileiro de Telecomunicações e Processamento de Sinais",
       "releaseDate": "2017-09-03",
-      "summary": "",
+      "summary": "The massive amount of low-end uplink traffic of Machine to Machine (M2M) communications are a key aspect of what 5G will be. In this context, Narrowband-IoT (NB-IoT) is described as the next step to allow Long Term Evolution (LTE) support for this type of traffic. This new technology provides support to massive amounts of ultra-low-end devices while occupying the frequency space of a single LTE resource block. This work studies the NB-IoT uplink, which allows multitone and single-tone transmissions. These types of transmissions result in configurations of resource units for NB-IoT devices that have different durations and frequency occupations. We present extensive simulations results that provide insight into the behavior of the configurations. Based on these simulations, we discuss the best resource configurations to be used by NB-IoT. We also defend the feasibility of NB-IoT for higher tier traffic.",
       "url": "http://www.sbrt.org.br/sbrt2017/anais/anais_sbrt_2017.pdf"
     },
     {
@@ -252,26 +252,26 @@
   "interests": [],
   "references": [
     {
-      "Name": "Fabrice Théoleyre",
-      "Reference": "theoleyre@unistra.fr"
+      "name": "Fabrice Théoleyre, thesis director between 2019 and 2022",
+      "reference": "theoleyre [at] unistra.fr"
     },
     {
-      "Name": "Pascal Mérindol",
-      "Reference": "merindol@unistra.fr"
+      "name": "Pascal Mérindol, thesis director between 2019 and 2022",
+      "reference": "merindol [at] unistra.fr"
     },
     {
-      "Name": "Carina Teixeira de Oliveira",
-      "Reference": "carina@lar.ifce.edu.br"
+      "name": "Carina Teixeira de Oliveira, research advisor between 2014 and 2017",
+      "reference": "carina [at] lar.ifce.edu.br"
     },
     {
-      "Name": "Amadeo Acioly",
-      "Reference": "linkedin.com/in/amadeu-acioly-a860416b"
+      "name": "Amadeo Acioly, IT manager in 2017 and 2018",
+      "reference": "linkedin.com/in/amadeu-acioly-a860416b"
     }
   ],
   "projects": [],
   "meta": {
     "version": "v1.0.0",
     "canonical": "https://github.com/jsonresume/resume-schema/blob/v1.0.0/schema.json",
-    "theme": "caffeine"
+    "theme": "short"
   }
 }
