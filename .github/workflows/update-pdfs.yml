@@ -1,0 +1,62 @@
+name: update-pdfs
+run-name: Update PDFs
+on:
+  push:
+    branches: [ "master" ]
+jobs:
+  build-french-pdf:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    - name: Make sure workspace is clean
+      run: make clean
+    - name: Build pdf
+      uses: xu-cheng/latex-action@v3
+      with:
+        root_file: cv_french.tex
+        compiler: pdflatex
+    - name: 'Upload Artifact'
+      uses: actions/upload-artifact@v4
+      with:
+        name: cv-french
+        path: cv_french.pdf
+        retention-days: 1
+  build-english-pdf:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    - name: Make sure workspace is clean
+      run: make clean
+    - name: Build pdf
+      uses: xu-cheng/latex-action@v3
+      with:
+        root_file: cv_english.tex
+        compiler: pdflatex
+    - name: 'Upload artifact'
+      uses: actions/upload-artifact@v4
+      with:
+        name: cv-english
+        path: cv_english.pdf
+        retention-days: 1
+  push-new-pdfs:
+    permissions:
+      contents: write
+    runs-on: ubuntu-latest
+    needs: [build-english-pdf, build-french-pdf]
+    steps:
+      - uses: actions/checkout@v4
+      - name: Download generated PDFs
+        uses: actions/download-artifact@v4
+        with:
+          path: "."
+          merge-multiple: true
+      - name: Git add
+        run: | 
+          git config --local user.email "bot@github.com"
+          git config --local user.name "PDF bot"
+          git add cv*.pdf
+          git commit -m 'New version of PDFs'
+      - name: Push new versions
+        uses: ad-m/github-push-action@master
+        with: 
+          github_token: ${{ secrets.GITHUB_TOKEN }}
