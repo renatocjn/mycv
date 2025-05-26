@@ -4,8 +4,24 @@ on:
   push:
     branches: [ "master" ]
 jobs:
+  check-pdfs-pushed:
+    runs-on: ubuntu-latest
+    outputs:
+      french: ${{ steps.changes.outputs.french }}
+      english: ${{ steps.changes.outputs.english }}
+    steps:
+    - uses: actions/checkout@v4
+    - uses: dorny/paths-filter@v3
+      id: changes
+      with:
+        filters: |
+          french: ['./cv_french.pdf']
+          english: ['./cv_english.pdf']
+
   build-french-pdf:
     runs-on: ubuntu-latest
+    needs: [check-pdfs-pushed]
+    if: ${{needs.check-pdfs-pushed.outputs.french != 'true'}}
     steps:
     - uses: actions/checkout@v4
     - name: Make sure workspace is clean
@@ -23,6 +39,8 @@ jobs:
         retention-days: 1
   build-english-pdf:
     runs-on: ubuntu-latest
+    needs: [check-pdfs-pushed]
+    if: ${{needs.check-pdfs-pushed.outputs.english != 'true'}}
     steps:
     - uses: actions/checkout@v4
     - name: Make sure workspace is clean
