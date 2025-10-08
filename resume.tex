@@ -27,6 +27,7 @@
 %====================
 
 \usepackage[english,french]{babel}
+\usepackage[export]{adjustbox}
 \usepackage{TLCresume}
 \usepackage{fontawesome5}
 \usepackage{setspace}
@@ -67,14 +68,14 @@
 %====================
 \def\name{Renato C. Juaçaba Neto} % Name Here
 \def\phone{TODO}
-\def\email{renatocjn@gmail.com}
+\def\email{renatocjn\atSymbol{}gmail.com}
 \def\LinkedIn{renatocjn} % linkedin.com/in/______
 \def\github{renatocjn} % github username
 \def\role{% JOB TITLE
 \en{Senior Full-Stack Developer}
-\fr{Senior Développeur Full-Stack}
+\fr{Développeur Senior Full-Stack}
 }
-\def\address{Cambridge, UK}
+\def\address{Cambridge, \en{UK}\fr{Royaume-Uni}}
 \def\languages{% Languages spoken
 \en{Portuguese {\scriptsize (nat)}, english {\scriptsize (C1)}, french {\scriptsize (B2)}}
 \fr{Portugais {\scriptsize (mat)}, anglais{\scriptsize (C1)}, français {\scriptsize (B2)}}
@@ -84,40 +85,47 @@
 \begin{document}
 
 \input{_header}
+\medskip
 
 \section{
   \en{Skills}
   \fr{Compétences}
 }
 \input{sections/skills}
+\medskip
 
 \section{
   \en{Experience}
   \fr{Expérience}
 }
 \input{sections/experience}
+\medskip
+
+\newpage
 
 \section{
   \en{Education}
   \fr{Éducation}
 }
 \input{sections/education}
+\medskip
 
 \section{
   \en{Main Publications}
   \fr{Principales publications}
 }
 \input{sections/publications}
+\medskip
 
 \section{
   \en{Other Activities \& information}
   \fr{Autres activités \& informations}
 }
 \input{sections/activities}
+\medskip
 
-% \en{\section{References}}
-% \fr{\section{Références}}
-% \input{sections/references}
-
+\en{\section{References}}
+\fr{\section{Références}}
+\input{sections/references}
 
 \end{document}
